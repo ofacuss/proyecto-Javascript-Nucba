@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechStore 2026 | E-commerce</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com" rel="stylesheet">
+
+    <!-- Bootstrap 5.3.2 CSS -->
+    <link href="https://cdn.jsdelivr.net" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net">
+    
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold fs-3" href="#">TECH<span>STORE</span></a>
+            <button class="navbar-toggler border-0" type="button" id="menu-btn" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav align-items-center">
+                    <li class="nav-item"><a class="nav-link" href="#hero">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">Nosotros</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#products">Productos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contacto</a></li>
+                    <li class="nav-item ms-lg-3">
+                        <button class="btn btn-primary rounded-pill d-flex align-items-center" id="cart-toggle" data-bs-toggle="offcanvas" data-bs-target="#cartOffcanvas">
+                            <i class="bi bi-cart3 me-2"></i> 
+                            <span id="cart-count" class="badge bg-white text-primary rounded-circle">0</span>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <header id="hero" class="hero-section">
+        <div class="container text-center">
+            <div class="reveal">
+                <h1 class="display-1 fw-bold text-white">Tecnología 2026</h1>
+                <p class="lead mb-5 text-white-50 fs-4 mx-auto w-75">Innovación curada para expertos.</p>
+                <div class="d-flex gap-3 justify-content-center flex-wrap">
+                    <a href="#products" class="btn btn-primary btn-lg px-5 hover-up">Catálogo</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Nosotros -->
+    <section id="about" class="py-5 bg-white">
+        <div class="container py-5">
+            <div class="row align-items-center justify-content-center g-5">
+                <div class="col-lg-5 reveal">
+                    <img src="https://images.unsplash.com" class="img-fluid rounded-5 shadow-lg" alt="About">
+                </div>
+                <div class="col-lg-5 reveal text-center text-lg-start">
+                    <h6 class="text-primary fw-bold text-uppercase">Nuestra Historia</h6>
+                    <h2 class="display-5 fw-bold mb-4">Liderando el mañana.</h2>
+                    <p class="text-muted fs-5">TechStore 2026 es el hub de innovación líder en la región.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Productos -->
+    <section id="products" class="bg-light py-5">
+        <div class="container py-5 text-center">
+            <h2 class="section-title reveal">Productos</h2>
+            <div class="d-flex justify-content-center gap-2 mb-5 reveal">
+                <button class="btn btn-outline-dark filter-btn" data-category="all">Todos</button>
+                <button class="btn btn-outline-dark filter-btn" data-category="tech">Tecnología</button>
+                <button class="btn btn-outline-dark filter-btn" data-category="audio">Audio</button>
+            </div>
+            <div class="row g-4" id="products-grid"></div>
+        </div>
+    </section>
+
+    <!-- Contacto -->
+    <section id="contact" class="py-5 bg-white">
+        <div class="container py-5 text-center">
+            <h2 class="section-title reveal">Contacto</h2>
+            <div class="row justify-content-center g-4">
+                <div class="col-lg-6 reveal">
+                    <form id="contact-form" class="p-4 bg-light rounded-5 shadow-sm text-start">
+                        <div class="mb-3">
+                            <label class="form-label fw-bold">Nombre</label>
+                            <input type="text" id="name" class="form-control" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label fw-bold">Email</label>
+                            <input type="email" id="email" class="form-control" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label fw-bold">Mensaje</label>
+                            <textarea id="message" class="form-control" rows="3" required></textarea>
+                        </div>
+                        <div id="form-message" class="mb-3"></div>
+                        <button type="submit" class="btn btn-primary w-100 py-3 hover-up">Enviar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Carrito Offcanvas -->
+    <div class="offcanvas offcanvas-end" id="cartOffcanvas">
+        <div class="offcanvas-header bg-dark text-white">
+            <h5 class="fw-bold">Carrito</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"></button>
+        </div>
+        <div class="offcanvas-body">
+            <ul id="cart-list" class="list-group list-group-flush mb-4"></ul>
+            <h4 class="text-center">Total: $<span id="total-price">0</span></h4>
+        </div>
+    </div>
+
+    <!-- SCRIPTS: Primero Bootstrap, luego el tuyo -->
+    <script src="https://cdn.jsdelivr.net"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
